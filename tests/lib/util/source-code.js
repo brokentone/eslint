@@ -258,7 +258,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionExpression: spy }));
-            linter.verify(code, { rules: { checker: "error" } });
+            linter.verify(code, { rules: { checker: "error" }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
 
         });
@@ -286,7 +286,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionExpression: spy }));
-            linter.verify(code, { rules: { checker: "error" } });
+            linter.verify(code, { rules: { checker: "error" }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
 
         });
@@ -316,7 +316,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionExpression: spy }));
-            linter.verify(code, { rules: { checker: "error" } });
+            linter.verify(code, { rules: { checker: "error" }, parser: "babel-eslint" });
             assert.isTrue(spy.calledTwice, "Event handler should be called twice.");
 
         });
@@ -348,7 +348,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionExpression: spy }));
-            linter.verify(code, { rules: { checker: "error" } });
+            linter.verify(code, { rules: { checker: "error" }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
         });
 
@@ -376,7 +376,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionDeclaration: spy }));
-            linter.verify(code, { rules: { checker: "error" } });
+            linter.verify(code, { rules: { checker: "error" }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
 
         });
@@ -405,7 +405,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionDeclaration: spy }));
-            linter.verify(code, { rules: { checker: "error" }, parserOptions: { sourceType: "module" } });
+            linter.verify(code, { rules: { checker: "error" }, parserOptions: { sourceType: "module" }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
 
         });
@@ -436,7 +436,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionDeclaration: spy }));
-            linter.verify(code, { rules: { checker: "error" } });
+            linter.verify(code, { rules: { checker: "error" }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
 
         });
@@ -467,7 +467,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionDeclaration: spy }));
-            linter.verify(code, { rules: { checker: "error" } });
+            linter.verify(code, { rules: { checker: "error" }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
 
         });
@@ -497,7 +497,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionDeclaration: spy }));
-            linter.verify(code, { rules: { checker: "error" } });
+            linter.verify(code, { rules: { checker: "error" }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
 
         });
@@ -529,7 +529,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionDeclaration: spy }));
-            linter.verify(code, { rules: { checker: "error" } });
+            linter.verify(code, { rules: { checker: "error" }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
         });
 
@@ -560,7 +560,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionExpression: spy }));
-            linter.verify(code, { rules: { checker: "error" } });
+            linter.verify(code, { rules: { checker: "error" }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
         });
 
@@ -591,7 +591,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ ArrowFunctionExpression: spy }));
-            linter.verify(code, { rules: { checker: "error" }, parserOptions: { ecmaVersion: 6 } });
+            linter.verify(code, { rules: { checker: "error" }, parserOptions: { ecmaVersion: 6 }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
         });
 
@@ -620,7 +620,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionExpression: spy }));
-            linter.verify(code, { rules: { checker: "error" } });
+            linter.verify(code, { rules: { checker: "error" }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
         });
 
@@ -653,7 +653,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionExpression: spy }));
-            linter.verify(code, { rules: { checker: "error" } });
+            linter.verify(code, { rules: { checker: "error" }, parser: "babel-eslint" });
             assert.isTrue(spy.calledTwice, "Event handler should be called.");
         });
 
@@ -685,7 +685,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionExpression: spy }));
-            linter.verify(code, { rules: { checker: "error" } });
+            linter.verify(code, { rules: { checker: "error" }, parser: "babel-eslint" });
             assert.isTrue(spy.calledTwice, "Event handler should be called.");
         });
 
@@ -715,7 +715,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionExpression: spy }));
-            linter.verify(code, { rules: { checker: "error" } });
+            linter.verify(code, { rules: { checker: "error" }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
         });
 
@@ -753,7 +753,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionExpression: spy }));
-            linter.verify(code, { rules: { checker: "error" } });
+            linter.verify(code, { rules: { checker: "error" }, parser: "babel-eslint" });
             assert.isTrue(spy.calledTwice, "Event handler should be called.");
         });
 
@@ -782,7 +782,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ ClassExpression: spy }));
-            linter.verify(code, { rules: { checker: "error" }, parserOptions: { ecmaVersion: 6 } });
+            linter.verify(code, { rules: { checker: "error" }, parserOptions: { ecmaVersion: 6 }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
         });
 
@@ -811,7 +811,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ ClassDeclaration: spy }));
-            linter.verify(code, { rules: { checker: "error" }, parserOptions: { ecmaVersion: 6 } });
+            linter.verify(code, { rules: { checker: "error" }, parserOptions: { ecmaVersion: 6 }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
         });
 
@@ -840,7 +840,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionExpression: spy }));
-            linter.verify(code, { rules: { checker: "error" }, parserOptions: { ecmaVersion: 6 } });
+            linter.verify(code, { rules: { checker: "error" }, parserOptions: { ecmaVersion: 6 }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
         });
 
@@ -905,7 +905,7 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionExpression: spy }));
-            linter.verify(code, { rules: { checker: "error" }, parserOptions: { ecmaVersion: 6 } });
+            linter.verify(code, { rules: { checker: "error" }, parserOptions: { ecmaVersion: 6 }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
         });
 
@@ -936,14 +936,14 @@ describe("SourceCode", () => {
             const spy = sandbox.spy(assertJSDoc);
 
             linter.defineRule("checker", () => ({ FunctionDeclaration: spy }));
-            linter.verify(code, { rules: { checker: "error" }, parserOptions: { ecmaVersion: 6 } });
+            linter.verify(code, { rules: { checker: "error" }, parserOptions: { ecmaVersion: 6 }, parser: "babel-eslint" });
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
         });
 
     });
 
     describe("getComments()", () => {
-        const config = { rules: { checker: "error" }, parserOptions: { sourceType: "module" } };
+        const config = { rules: { checker: "error" }, parserOptions: { sourceType: "module" }, parser: "babel-eslint" };
         let unusedAssertionFuncs;
 
 
@@ -1859,7 +1859,8 @@ describe("SourceCode", () => {
     describe("linter.verify()", () => {
 
         const CONFIG = {
-            parserOptions: { ecmaVersion: 6 }
+            parserOptions: { ecmaVersion: 6 },
+            parser: "babel-eslint"
         };
 
         it("should work when passed a SourceCode object without a config", () => {
@@ -1882,7 +1883,8 @@ describe("SourceCode", () => {
             const sourceCode = new SourceCode("let foo = bar;", AST),
                 messages = linter.verify(sourceCode, {
                     parserOptions: { ecmaVersion: 6 },
-                    rules: { "no-unused-vars": 2 }
+                    rules: { "no-unused-vars": 2 },
+                    parser: "babel-eslint"
                 });
 
             assert.strictEqual(messages.length, 1);
