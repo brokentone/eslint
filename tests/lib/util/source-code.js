@@ -844,6 +844,38 @@ describe("SourceCode", () => {
             assert.isTrue(spy.calledOnce, "Event handler should be called.");
         });
 
+        it("should not get JSDoc comment for class method even if the class has jsdoc present", () => {
+
+            const code = [
+                "/** Merges two objects together.*/",
+                "class A {",
+                "    constructor(xs) {}",
+                " ",
+                "    methodOne = () => {}",
+                "};"
+            ].join("\n");
+
+            /**
+             * Check jsdoc presence
+             * @param {ASTNode} node not to check
+             * @returns {void}
+             * @private
+             */
+            function assertJSDoc(node) {
+                const sourceCode = linter.getSourceCode();
+                console.log(sourceCode);
+                const jsdoc = sourceCode.getJSDocComment(node);
+
+                assert.isNull(jsdoc);
+            }
+
+            const spy = sandbox.spy(assertJSDoc);
+
+            linter.defineRule("checker", () => ({ ArrowFunctionExpression: spy }));
+            console.log(linter.verify(code, { rules: { checker: "error" }, parser: "babel-eslint", parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true } } }));
+            assert.isTrue(spy.calledOnce, "Event handler should be called.");
+        });
+
         it("should get JSDoc comment for function expression even if function has blank lines on top", () => {
 
             const code = [
